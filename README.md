@@ -60,17 +60,14 @@ Dessa forma, o projeto já simula um **pipeline de ETL simples**:
 
 ---
 
-## 📊 Resultados Obtidos
+### Resultados Obtidos
+| Métrica                | Valor      |
+|------------------------|------------|
+| **Taxa de churn**      | 60%        |
+| **Ticket médio (ativos)** | R$ 87,22 |
+| **Ticket médio (churn)**  | R$ 116,18 |
 
-- **Data de referência**: 2024-08-01  
-- **Taxa de churn**: **60%**  
-- **Ticket médio (ativos)**: R$ 87,22  
-- **Ticket médio (churn)**: R$ 116,18  
-
-📌 *Insight*: Os clientes que deixaram de 
-comprar (**churn**) tinham um **ticket médio maior**
-do que os clientes ativos, indicando 
-uma perda significativa para o negócio.
+**Insight**: clientes com ticket médio maior acabaram se tornando churn — sinal de perda financeira relevante.
 
 ---
 
