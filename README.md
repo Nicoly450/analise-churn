@@ -1,3 +1,9 @@
+[![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)](#)
+[![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-brightgreen)](#)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-Visuals-orange)](#)
+[![Status](https://img.shields.io/badge/Status-Concluído-success)](#)
+
+
 # 📊 Análise de Churn de Clientes
 
 Este projeto tem como objetivo analisar a **taxa de churn (cancelamento/inatividade de clientes)** a partir de uma base fictícia de pedidos.  
