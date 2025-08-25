@@ -1,0 +1,11 @@
+cliente,data_pedido,valor,canal,status
+Ana Souza,2024-01-15,89.90,Instagram,Entregue
+Bruno Mello,2024-03-10,120.50,Site,Entregue
+Carlos Lima,2024-06-22,75.30,Whatsapp,Cancelado
+Daniela Alves,2024-07-05,49.90,Ifood,Entregue
+Eva Santos,2024-02-18,210.00,Instagram,Entregue
+Fernanda Rocha,2024-04-12,99.00,Site,Cancelado
+Gustavo Dias,2024-08-01,135.70,Instagram,Entregue
+Helena Nunes,2024-01-20,65.40,Whatsapp,Entregue
+Igor Teixeira,2024-05-30,88.00,Ifood,Pendente
+Julia Prado,2024-02-25,112.30,Instagram,Entregue
