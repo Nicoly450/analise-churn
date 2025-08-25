@@ -57,43 +57,70 @@ print("✅ Resultados salvos na pasta 'resultados/'")
 
 
 # ------------------------
-# GRÁFICOS (Matplotlib)
+# GRÁFICOS (modo dark)
 # ------------------------
 import matplotlib.pyplot as plt
+import os
 
 os.makedirs("graficos", exist_ok=True)
 
-# 1) Pizza - distribuição Ativos x Churn
+# tema escuro global
+plt.style.use("dark_background")
+FIG_BG = "#0f1115"   
+AX_BG  = "#0f1115"  
+
+def _finish(filename):
+    plt.tight_layout()
+    plt.savefig(filename, dpi=140, facecolor=FIG_BG)
+    plt.close()
+
+# 1) Pizza - Ativos x Churn
 qtd_churn = int(ultimas["churn"].sum())
 qtd_ativos = int(len(ultimas) - qtd_churn)
 
-plt.figure(figsize=(6, 6))
-plt.pie([qtd_ativos, qtd_churn],
-        labels=["Ativos", "Churn"],
-        autopct="%.1f%%",
-        startangle=90)
-plt.title("Distribuição de Clientes (Ativos x Churn)")
-plt.savefig("graficos/churn_pizza.png")
-plt.close()
+plt.figure(figsize=(6, 6), facecolor=FIG_BG)
+ax = plt.gca()
+ax.set_facecolor(AX_BG)
+plt.pie(
+    [qtd_ativos, qtd_churn],
+    labels=["Ativos", "Churn"],
+    autopct="%.1f%%",
+    startangle=90,
+    colors=["#2ecc71", "#e67e22"],   
+    wedgeprops={"linewidth": 1, "edgecolor": AX_BG},
+    textprops={"fontsize": 11}
+)
+plt.title("Distribuição de Clientes (Ativos x Churn)", fontsize=12, pad=12)
+_finish("graficos/churn_pizza_dark.png")
 
 # 2) Barras - Ticket médio por grupo
-plt.figure(figsize=(6, 4))
-plt.bar(["ativos", "churn"], [ticket_ativos, ticket_churn])
-plt.title("Ticket Médio por Grupo")
+plt.figure(figsize=(7, 4.2), facecolor=FIG_BG)
+ax = plt.gca()
+ax.set_facecolor(AX_BG)
+ax.grid(axis="y", alpha=0.25, linestyle="--")
+bars = plt.bar(
+    ["ativos", "churn"],
+    [ticket_ativos, ticket_churn],
+    color=["#2e86de", "#e74c3c"]    
+)
+plt.title("Ticket Médio por Grupo", fontsize=12, pad=10)
 plt.ylabel("Valor (R$)")
-plt.savefig("graficos/ticket_barras.png")
-plt.close()
+# rótulo no topo das barras
+for b in bars:
+    v = b.get_height()
+    ax.text(b.get_x()+b.get_width()/2, v+1, f"R$ {v:.2f}", ha="center", va="bottom", fontsize=10)
+_finish("graficos/ticket_barras_dark.png")
 
 # 3) Linha - Evolução mensal de pedidos
 df["mes"] = df["data_pedido"].dt.to_period("M").dt.to_timestamp()
 serie = df.groupby("mes").size()
 
-plt.figure(figsize=(8, 4))
-plt.plot(serie.index, serie.values, marker="o", color="blue")
-plt.title("Evolução Mensal de Pedidos")
+plt.figure(figsize=(8, 4.5), facecolor=FIG_BG)
+ax = plt.gca()
+ax.set_facecolor(AX_BG)
+ax.grid(True, alpha=0.25, linestyle="--")
+plt.plot(serie.index, serie.values, marker="o", linewidth=2, markersize=5, color="#00bcd4")
+plt.title("Evolução Mensal de Pedidos", fontsize=12, pad=10)
 plt.xlabel("Mês")
 plt.ylabel("Qtd de Pedidos")
-plt.grid(True, alpha=0.3)
-plt.tight_layout()
-plt.savefig("graficos/pedidos_linha_mensal.png", dpi=120)
-plt.close()
+_finish("graficos/pedidos_linha_mensal_dark.png")
