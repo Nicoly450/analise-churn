@@ -71,13 +71,13 @@ uma perda significativa para o negócio.
 ## 📈 Visualizações
 
 ### Distribuição de Clientes (Ativos x Churn)
-![Distribuição de Clientes](./graficos/churn_pizza.png)
+![Distribuição de Clientes(Ativos x Churn)](./graficos/churn_pizza_dark.png).
 
 ### Ticket Médio por Grupo
-![Ticket Médio](./graficos/ticket_barras.png)
+![Ticket Médio](./graficos/ticket_barras_dark.png)
 
 ### Evolução Mensal de Pedidos
-![Pedidos Linha Mensal](./graficos/pedidos_linha_mensal.png)
+![Pedidos Linha Mensal](./graficos/pedidos_linha_mensal_dark.png)
 
 ---
 
