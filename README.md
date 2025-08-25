@@ -71,10 +71,10 @@ Dessa forma, o projeto já simula um **pipeline de ETL simples**:
 ![Distribuição de Clientes](./graficos/churn_pizza.png)
 
 ### Ticket Médio por Grupo
-![Ticket Médio](ticket_barras.png)
+![Ticket Médio](./graficos/ticket_barras.png)
 
 ### Evolução Mensal de Pedidos
-![Pedidos Linha Mensal](pedidos_linha_mensal.png)
+![Pedidos Linha Mensal](./graficos/pedidos_linha_mensal.png)
 
 ---
 
